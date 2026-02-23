@@ -1,0 +1,15 @@
+<header>
+        <div class="header-content">
+            <div class="logo">MegaShop</div>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/categorie/informatique">Informatique</a></li>
+                    <li><a href="/petit-electromenager">Petit Électroménager</a></li>
+                    <li><a href="/grand-electromenager">Grand Électroménager</a></li>
+                    <li><a href="cgv">CGV</a></li>
+                    <li><a href="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
