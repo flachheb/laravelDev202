@@ -1,27 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-Route::get('/', function () {
-    return view('home'); 
-});
-
-Route::get('/informatique', function () {
-    return view('informatique');
-});
-
-Route::get('/petit-electromenager', function () {
-    return view('petit-electromenager');
-});
-
-Route::get('/grand-electromenager', function () {
-    return view('.grand-electromenager');
-});
-
-Route::get('/cgv', function () {
-    return view('cgv');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ProductController;
+Route::get('/', [ShopController::class, "index"]);
+Route::get('/contact', [ShopController::class, "contact"]);
+Route::get('/cgv', [ShopController::class, "cgv"]);
+Route::get('/product/{id}', [ProductController::class, "product"]);
+Route::get('/categorie/{id}', [ProductController::class, "categorie"]);

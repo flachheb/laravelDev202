@@ -1,17 +1,15 @@
-<header>
-    <div class="header-content">
-        <div class="logo">
-            <a href="{{ url('/') }}">MegaShop</a>
+ <header>
+        <div class="header-content">
+            <div class="logo">MegaShop</div>
+            <nav>
+                <ul>
+                    <li><a href="/">Accueil</a></li>
+                    <li><a href="/categorie/informatique">Informatique</a></li>
+                    <li><a href="/categorie/petit_electromenager">Petit Électroménager</a></li>
+                    <li><a href="/categorie/grand_electromenager">Grand Électroménager</a></li>
+                    <li><a href="/cgv">CGV</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="{{ url('/') }}">Accueil</a></li>
-                <li><a href="{{ url('/informatique') }}">Informatique</a></li>
-                <li><a href="{{ url('/petit-electromenager') }}">Petit Électroménager</a></li>
-                <li><a href="{{ url('/grand-electromenager') }}">Grand Électroménager</a></li>
-                <li><a href="{{ url('/cgv') }}">CGV</a></li>
-                <li><a href="{{ url('/contact') }}">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
