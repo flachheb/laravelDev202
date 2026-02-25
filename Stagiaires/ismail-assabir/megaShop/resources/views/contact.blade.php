@@ -7,21 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">MegaShop</div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="informatique.html">Informatique</a></li>
-                    <li><a href="petit-electromenager.html">Petit Électroménager</a></li>
-                    <li><a href="grand-electromenager.html">Grand Électroménager</a></li>
-                    <li><a href="cgv.html">CGV</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    @include('partials.header')
 
     <main>
         <h1 class="page-title">Nous Contacter</h1>
@@ -77,37 +63,37 @@
                     <div style="margin-bottom: 25px;">
                         <h4 style="color: #3498db; margin-bottom: 8px;">Siège Social</h4>
                         <p style="color: #555; line-height: 1.8;">
-                            MegaShop<br>
-                            123 Avenue du Commerce<br>
-                            75001 Paris<br>
-                            France
+                            {{$data['company']['name']}}<br>
+                            {{$data['company']['address']}}<br>
+                            {{$data['company']['zip']}} {{$data['company']['city']}}<br>
+                            {{$data['company']['country']}}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
                         <h4 style="color: #3498db; margin-bottom: 8px;">Téléphone</h4>
                         <p style="color: #555;">
-                            <strong>Général :</strong> +212 1 23 45 67 89<br>
-                            <strong>Support :</strong> +212 1 23 45 67 00<br>
-                            <strong>Ventes :</strong> +212 1 23 45 67 99
+                            <strong>Général :</strong> {{$data['contact']['phone_general']}}<br>
+                            <strong>Support :</strong> {{$data['contact']['phone_support']}}<br>
+                            <strong>Ventes :</strong> {{$data['contact']['phone_sales']}}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
                         <h4 style="color: #3498db; margin-bottom: 8px;">Email</h4>
                         <p style="color: #555;">
-                            <strong>General :</strong> info@megashop.com<br>
-                            <strong>Support :</strong> support@megashop.com<br>
-                            <strong>Ventes :</strong> ventes@megashop.com
+                            <strong>General :</strong> {{$data['company']['email']}}<br>
+                            <strong>Support :</strong> {{$data['company']['support_email']}}<br>
+                            <strong>Ventes :</strong> {{$data['company']['sales_email']}}
                         </p>
                     </div>
 
                     <div>
                         <h4 style="color: #3498db; margin-bottom: 8px;">Horaires d'Ouverture</h4>
                         <p style="color: #555;">
-                            Lundi - Vendredi : 9:00 - 18:00<br>
-                            Samedi : 10:00 - 16:00<br>
-                            Dimanche : Fermé
+                            Lundi - Vendredi : {{$data['hours']['monday_friday']}}<br>
+                            Samedi : {{$data['hours']['saturday']}}<br>
+                            Dimanche : {{$data['hours']['sunday']}}
                         </p>
                     </div>
                 </div>
@@ -116,10 +102,10 @@
                     <h3 style="color: #2c3e50; margin-bottom: 20px;">💬 Réseaux Sociaux</h3>
                     <p style="margin-bottom: 15px;">Suivez-nous sur nos réseaux sociaux pour les dernières actualités et offres :</p>
                     <div style="display: flex; gap: 15px;">
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">📘 Facebook</a>
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">📷 Instagram</a>
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">🐦 Twitter</a>
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">▶️ YouTube</a>
+                        <a href={{$data['social']['facebook']}} style="color: #3498db; text-decoration: none; font-weight: bold;">📘 Facebook</a>
+                        <a href={{$data['social']['instagram']}} style="color: #3498db; text-decoration: none; font-weight: bold;">📷 Instagram</a>
+                        <a href={{$data['social']['twitter']}} style="color: #3498db; text-decoration: none; font-weight: bold;">🐦 Twitter</a>
+                        <a href={{$data['social']['youtube']}} style="color: #3498db; text-decoration: none; font-weight: bold;">▶️ YouTube</a>
                     </div>
                 </div>
             </div>
@@ -197,14 +183,6 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 MegaShop - Tous droits réservés</p>
-        <div class="footer-links">
-            <a href="cgv.html">CGV</a>
-            <a href="contact.html">Contact</a>
-            <a href="#">Mentions Légales</a>
-        </div>
-        <p><strong>Email :</strong> info@megashop.com | <strong>Téléphone :</strong> +212 1 23 45 67 89</p>
-    </footer>
+     @include('partials.header')
 </body>
 </html>

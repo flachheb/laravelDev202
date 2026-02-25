@@ -730,8 +730,38 @@ function getProductById($id) {
  * @return array|null
  */
 function getCategoryById($id) {
-    global $categories;
-    return isset($categories[$id]) ? $categories[$id] : null;
+    // global $categories;
+    $categories = [
+    'informatique' => [
+        'id' => 'informatique',
+        'name' => 'Informatique',
+        'slug' => 'informatique',
+        'icon' => '💻',
+        'description' => 'Ordinateurs, laptops, accessoires informatiques et bien plus...',
+        'url' => 'pages/informatique.html',
+    ],
+    'petit_electromenager' => [
+        'id' => 'petit_electromenager',
+        'name' => 'Petit Électroménager',
+        'slug' => 'petit-electromenager',
+        'icon' => '🍳',
+        'description' => 'Cafetières, grille-pain, mixeurs, robots culinaires...',
+        'url' => 'pages/petit-electromenager.html',
+    ],
+    'grand_electromenager' => [
+        'id' => 'grand_electromenager',
+        'name' => 'Grand Électroménager',
+        'slug' => 'grand-electromenager',
+        'icon' => '❄️',
+        'description' => 'Réfrigérateurs, lave-linge, lave-vaisselle, fours...',
+        'url' => 'pages/grand-electromenager.html',
+    ],
+];
+   foreach($categories as $cat){
+    if($cat['id']== $id){
+        return $cat;
+    }
+   }return [];
 }
 
 /**

@@ -7,21 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">MegaShop</div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="informatique.html">Informatique</a></li>
-                    <li><a href="petit-electromenager.html">Petit Électroménager</a></li>
-                    <li><a href="grand-electromenager.html">Grand Électroménager</a></li>
-                    <li><a href="cgv.html">CGV</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+     @include('partials.header')
     <main>
         <div class="breadcrumb">
             <a href="../index.html">Accueil</a>
@@ -114,14 +100,6 @@
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 MegaShop - Tous droits réservés</p>
-        <div class="footer-links">
-            <a href="cgv.html">CGV</a>
-            <a href="contact.html">Contact</a>
-            <a href="#">Mentions Légales</a>
-        </div>
-        <p><strong>Email :</strong> info@megashop.com | <strong>Téléphone :</strong> +212 1 23 45 67 89</p>
-    </footer>
+     @include('partials.footer')
 </body>
 </html>

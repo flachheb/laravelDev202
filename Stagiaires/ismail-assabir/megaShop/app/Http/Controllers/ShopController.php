@@ -11,9 +11,11 @@ class ShopController extends Controller
         return view('index');
     }
      function contact(){
-        return view('contact');
+        require(base_path("Data/data.php"));
+        return view('contact',["data"=> $config]);
     }
      function cgv(){
-        return view('cgv');
+        require(base_path("Data/data.php"));
+        return view('cgv',["cgv"=>$cgv]);
     }
 }

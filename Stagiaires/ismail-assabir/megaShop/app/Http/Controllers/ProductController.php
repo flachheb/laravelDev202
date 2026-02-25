@@ -8,17 +8,14 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     function product($id){
-        require base_path('data/data.php');
+        require base_path('Data/data.php');
         $product = getProductById($id);
-        return view('product', compact("id"));
+        return view('product', ['id'=>$product['id']]);
     }
     function categorie($id){
-        require base_path('data/data.php');
+        require base_path('Data/data.php');
         $categorie = getCategoryById($id);
-        if (!$categorie) {
-            abort(404, "La catégorie '$id' est introuvable.");
-        }
         $viewName = $categorie['id'];
-        return view($viewName, compact('categorie'));
+        return view($viewName, ["categorie"=>$categorie]);
     }
 }
