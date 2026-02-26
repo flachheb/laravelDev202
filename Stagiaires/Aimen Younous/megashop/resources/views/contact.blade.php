@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - MegaShop</title>
     <link rel="stylesheet" href="../css/style.css">
+     @include('./css')
 </head>
 <body>
     @include("partials/header")
@@ -62,37 +63,37 @@
                     <div style="margin-bottom: 25px;">
                         <h4 style="color: #3498db; margin-bottom: 8px;">Siège Social</h4>
                         <p style="color: #555; line-height: 1.8;">
-                            MegaShop<br>
-                            123 Avenue du Commerce<br>
-                            75001 Paris<br>
-                            France
+                            {{$config['company']['name']}}<br>
+                            {{$config['company']['address']}}<br>
+                            {{$config['company']['zip']}} {{$config['company']['city']}}<br>
+                            {{$config['company']['country']}}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
                         <h4 style="color: #3498db; margin-bottom: 8px;">Téléphone</h4>
                         <p style="color: #555;">
-                            <strong>Général :</strong> +212 1 23 45 67 89<br>
-                            <strong>Support :</strong> +212 1 23 45 67 00<br>
-                            <strong>Ventes :</strong> +212 1 23 45 67 99
+                            <strong>Général :</strong> {{$config['contact']['phone_general']}}<br>
+                            <strong>Support :</strong> {{$config['contact']['phone_support']}}<br>
+                            <strong>Ventes :</strong> {{$config['contact']['phone_sales']}}
                         </p>
                     </div>
 
                     <div style="margin-bottom: 25px;">
                         <h4 style="color: #3498db; margin-bottom: 8px;">Email</h4>
                         <p style="color: #555;">
-                            <strong>General :</strong> info@megashop.com<br>
-                            <strong>Support :</strong> support@megashop.com<br>
-                            <strong>Ventes :</strong> ventes@megashop.com
+                            <strong>General :</strong> {{$config['company']['email']}} <br>
+                            <strong>Support :</strong> {{$config['company']['support_email']}}<br>
+                            <strong>Ventes :</strong> {{$config['company']['sales_email']}}
                         </p>
                     </div>
 
                     <div>
                         <h4 style="color: #3498db; margin-bottom: 8px;">Horaires d'Ouverture</h4>
                         <p style="color: #555;">
-                            Lundi - Vendredi : 9:00 - 18:00<br>
-                            Samedi : 10:00 - 16:00<br>
-                            Dimanche : Fermé
+                            Lundi - Vendredi : {{$config['hours']['monday_friday']}}<br>
+                            Samedi : {{$config['hours']['saturday']}}<br>
+                            Dimanche : {{$config['hours']['sunday']}}
                         </p>
                     </div>
                 </div>
@@ -101,10 +102,10 @@
                     <h3 style="color: #2c3e50; margin-bottom: 20px;">💬 Réseaux Sociaux</h3>
                     <p style="margin-bottom: 15px;">Suivez-nous sur nos réseaux sociaux pour les dernières actualités et offres :</p>
                     <div style="display: flex; gap: 15px;">
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">📘 Facebook</a>
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">📷 Instagram</a>
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">🐦 Twitter</a>
-                        <a href="#" style="color: #3498db; text-decoration: none; font-weight: bold;">▶️ YouTube</a>
+                        <a href="{{$config['social']['facebook']}}" style="color: #3498db; text-decoration: none; font-weight: bold;">📘 Facebook</a>
+                        <a href="{{$config['social']['instagram']}}" style="color: #3498db; text-decoration: none; font-weight: bold;">📷 Instagram</a>
+                        <a href="{{$config['social']['twitter']}}" style="color: #3498db; text-decoration: none; font-weight: bold;">🐦 Twitter</a>
+                        <a href="{{$config['social']['youtube']}}" style="color: #3498db; text-decoration: none; font-weight: bold;">▶️ YouTube</a>
                     </div>
                 </div>
             </div>
@@ -117,52 +118,12 @@
             </h2>
 
             <div style="display: grid; gap: 20px;">
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 8px;">Quelle est la durée standard de livraison ?</h4>
-                    <p style="color: #555; margin-left: 15px;">
-                        La livraison standard prend 5 à 7 jours ouvrables. Une livraison express est également disponible 
-                        en 2 à 3 jours ouvrables.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 8px;">Comment puis-je retourner un produit ?</h4>
-                    <p style="color: #555; margin-left: 15px;">
-                        Vous disposez de 30 jours pour retourner votre produit. Veuillez <a href="contact.html">nous contacter</a> 
-                        pour obtenir une étiquette de retour.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 8px;">Acceptez-vous les paiements en plusieurs fois ?</h4>
-                    <p style="color: #555; margin-left: 15px;">
-                        Oui, nous proposons le paiement en 3 ou 4 fois sans frais pour les achats supérieurs à 100 €.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 8px;">Comment puis-je suivre ma commande ?</h4>
-                    <p style="color: #555; margin-left: 15px;">
-                        Un numéro de suivi vous sera envoyé par email après la confirmation de votre commande. 
-                        Vous pourrez suivre votre colis sur le site du transporteur.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 8px;">Proposez-vous une garantie sur vos produits ?</h4>
-                    <p style="color: #555; margin-left: 15px;">
-                        Tous nos produits bénéficient d'une garantie légale de 2 ans. Des extensions de garantie sont 
-                        également disponibles lors de l'achat.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 style="color: #2c3e50; margin-bottom: 8px;">Comment modifier ou annuler ma commande ?</h4>
-                    <p style="color: #555; margin-left: 15px;">
-                        Si votre commande n'a pas encore été expédiée, nous pouvons la modifier ou annuler. 
-                        Veuillez nous contacter au plus tôt avec votre numéro de commande.
-                    </p>
-                </div>
+                @foreach($faq as $val )
+                    <div>
+                        <h4 style="color: #2c3e50; margin-bottom: 8px;">{{$val['question']}}</h4>
+                        <p style="color: #555; margin-left: 15px;">{{$val['answer']}}</p>
+                    </div>
+                @endforeach
             </div>
         </section>
 

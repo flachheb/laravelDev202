@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    @include('./css')
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGV - Conditions Générales de Vente - MegaShop</title>
@@ -13,7 +15,13 @@
         <h1 class="page-title">Conditions Générales de Vente (CGV)</h1>
 
         <div class="cgv-content">
-            <div class="cgv-section">
+            @foreach($data as $val)
+                <div class="cgv-section">
+                    <h2>{{$val['id']}}. {{$val['title']}}</h2>
+                    <p>{{$val['content']}}</p>
+                </div>
+            @endforeach
+            <!-- <div class="cgv-section">
                 <h2>1. Dispositions Générales</h2>
                 <p>Les présentes Conditions Générales de Vente régissent les relations commerciales entre MegaShop (ci-après « le vendeur ») 
                 et ses clients (ci-après « l'acheteur »). Tout achat implique l'acceptation inconditionnelle de ces conditions.</p>
@@ -90,7 +98,7 @@
                 <p>MegaShop décline toute responsabilité pour les retards dus à la météo, aux grèves, ou à des facteurs 
                 extérieurs indépendants de sa volonté. En cas de dommages pendant le transport, l'acheteur doit signaler 
                 le sinistre à MegaShop dans les 48 heures.</p>
-            </div>
+            </div> -->
 
             <div class="cgv-section">
                 <h2>6. Garantie et Service Après-Vente</h2>

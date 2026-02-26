@@ -473,7 +473,7 @@ class ProductController extends Controller {
         
         $categories = ["grand-electromenager","petit-electromenager","informatique"];
         if(!in_array($cat,$categories)){
-            return abort(404); // hadi mafahmhach 
+            return abort(404); // hadi ktrej3 error 
         }
 
         return view("categories/" . $cat,["products"=>$products[$cat]]);
