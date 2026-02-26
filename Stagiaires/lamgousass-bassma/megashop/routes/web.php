@@ -13,6 +13,6 @@ Route::get('/contact', [ShopController::class, 'contact']);
 Route::get('/cgv', [ShopController::class, 'cgv']);
 
 
-Route::get('/categorie', [ProductController::class, 'categorie']);
+Route::get('/categorie/{slug?}', [ProductController::class, 'categorie']);
 
-Route::get('/produit', [ProductController::class, 'produitDetail']);
+Route::get('/produit/{id}', [ProductController::class, 'produitDetail']);

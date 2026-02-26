@@ -6,9 +6,9 @@
 
 <h3>Catégories principales :</h3>
 <ul>
-    <li><a href="/categorie">Informatique</a></li>
-    <li><a href="/categorie">Petit électroménager</a></li>
-    <li><a href="/categorie">Grand électroménager</a></li>
+   <a href="/categorie/informatique">Informatique</a>
+<a href="/categorie/petit-electromenager">Petit électroménager</a>
+<a href="/categorie/grand-electromenager">Grand électroménager</a>
 </ul>
 
 <h3>Produits en vedette :</h3>

@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     // Page catégorie (informatique, petit-electromenager, grand-electromenager)
-    public function categorie($type = 'informatique')
-    {
-        // $type = nom de catégorie
-        return view('categorie', ['categorie' => $type]);
+   public function categorie($slug)
+{
+    return view('categorie', compact('slug'));
+}
     }
 
     
