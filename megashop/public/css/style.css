@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #985872;
+    background: 3#702845;
     color: #4a004e;
 }
 
@@ -12,7 +12,7 @@ a { text-decoration: none; }
 
 /* Header */
 .header {
-    background: linear-gradient(90deg, #ff69b4, #b266ff);
+    background: linear-gradient(90deg, #7a2f54, #b266ff);
     padding: 15px;
     text-align: center;
 }

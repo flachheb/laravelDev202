@@ -6,27 +6,25 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
-    /**
-     * Page Accueil
-     */
+    
+  
+    
     public function index()
     {
         return view('index');
     }
 
-    /**
-     * Page Contact
-     */
-    public function contact()
-    {
-        return view('contact');
+    public function cgv()
+{
+    $sections = config('data.cgv');
+    return view('cgv', compact('sections'));
+}
+
+public function contact()
+{
+    $contact = config('data.contact');
+    return view('contact', compact('contact'));
+}
+        
     }
 
-    /**
-     * Page CGV
-     */
-    public function cgv()
-    {
-        return view('cgv');
-    }
-}
