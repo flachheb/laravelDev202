@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MegaShop</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <x-master title="Contact - MegaShop">
+    @extends("layouts.master")
+    @section('aimen')
         <h1 class="page-title">Nous Contacter</h1>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
@@ -138,7 +140,7 @@
                 Carte Google Maps (à intégrer)
             </div>
         </section>
-    </x-master>
+    @endsection
 
 </body>
 </html>

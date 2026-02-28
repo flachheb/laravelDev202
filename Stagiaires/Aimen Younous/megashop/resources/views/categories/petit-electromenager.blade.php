@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petit Électroménager - MegaShop</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    @extends('layouts.categories')
-    @section('categories')
+    <x-categories title="Petit Électroménager - MegaShop">
         <div class="breadcrumb">
             <a href="/accueil">Accueil</a>
             <span>/</span>
@@ -30,6 +28,6 @@
                 </div>
             @endforeach
         </div>
-    @endsection
+    </x-categories>
 </body>
 </html>

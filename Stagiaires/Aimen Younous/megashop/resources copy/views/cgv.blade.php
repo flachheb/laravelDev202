@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGV - Conditions Générales de Vente - MegaShop</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <x-master title="CGV - Conditions Générales de Vente - MegaShop">
+    @extends("layouts.master")
+    @section('aimen')
         <h1 class="page-title">Conditions Générales de Vente (CGV)</h1>
 
         <div class="cgv-content">
@@ -86,7 +88,7 @@
                 <p>Ces Conditions Générales de Vente sont valables à compter de la date mentionnée et jusqu'à modification ultérieure.</p>
             </div>
         </div>
-    </x-master>
+    @endsection
 
 
 </body>
