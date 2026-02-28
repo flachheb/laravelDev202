@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    @include('../css')
-<!-- <link rel="stylesheet" href="{{ asset('css/app.css') }}"></head> -->
     
 <body>
-    @include("../partials/header")
-    
-    <main>
+    @extends('layouts.master')
+    @section('aimen')
         <div class="hero">
             <h1>Bienvenue chez MegaShop</h1>
             <p>Découvrez notre sélection complète d'électronique et d'électroménager</p>
@@ -70,7 +67,6 @@
                 </div>
             </div>
         </section>
-    </main>
-    @include("../partials/footer")
+    @endsection
 </body>
 </html>

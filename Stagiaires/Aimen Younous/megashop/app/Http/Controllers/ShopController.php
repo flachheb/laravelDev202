@@ -10,7 +10,7 @@ class ShopController extends Controller
 
 {
     function accueil(){
-        return view('layouts/app');
+        return view('app');
     }
 
     function contact(){

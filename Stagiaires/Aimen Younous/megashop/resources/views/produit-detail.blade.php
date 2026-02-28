@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Détail Produit - MegaShop</title>
     <link rel="stylesheet" href="../css/style.css">
-     @include('./css')
 </head>
 <body>
-    @include("partials/header")
-
-    <main>
+    @extends("layouts.master")
+    @section('aimen')  
         <div class="breadcrumb">
             <a href="/accueil">Accueil</a>
             <span>/</span>
@@ -126,8 +124,8 @@
                 </ul>
             </div>
         </div>
-    </main>
+    
+    @endsection
 
-    @include("partials/footer")
 </body>
 </html>

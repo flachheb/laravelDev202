@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - MegaShop</title>
     <link rel="stylesheet" href="../css/style.css">
-     @include('./css')
 </head>
 <body>
-    @include("partials/header")
-    <main>
+    @extends("layouts.master")
+    @section('aimen')
         <h1 class="page-title">Nous Contacter</h1>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
@@ -141,8 +140,7 @@
                 Carte Google Maps (à intégrer)
             </div>
         </section>
-    </main>
+    @endsection
 
-     @include("partials/footer")
 </body>
 </html>

@@ -4,18 +4,18 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ProductController;
 
-Route::get('/', function () {
-    return view('layouts/app');
-});
+// Route::get('/', function () {
+//     return view('layouts.master');
+// });
 
-Route::get("/accueil", [ShopController::class,'accueil']);
+Route::get("/", [ShopController::class,'accueil'])->name('accueil');
 
-Route::get("/contact",[ShopController::class,'contact']);
+Route::get("/contact",[ShopController::class,'contact'])->name('contact');
 
 
-Route::get("/cgv",[ShopController::class,'cgv'] );
+Route::get("/cgv",[ShopController::class,'cgv'] )->name('cgv');
 
-Route::get("/categories/{cat}",[ProductController::class,'categories']);
+Route::get("/categories/{cat}",[ProductController::class,'categories'])->name('categories');
 
-Route::get("/produitDetail/{cat}/{id}",[ProductController::class,'produit']);
+Route::get("/produitDetail/{cat}/{id}",[ProductController::class,'produit'])->name('productDetail');
 
