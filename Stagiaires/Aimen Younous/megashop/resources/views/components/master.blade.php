@@ -10,7 +10,7 @@
 <body>
     @include("../partials/header")
     
-    <main>
+    <main class="container">
         {{$slot}}
     </main>
     @include("../partials/footer")
