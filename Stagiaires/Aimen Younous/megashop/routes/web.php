@@ -21,7 +21,7 @@ Route::get("/produitDetail/{cat}/{id}",[ProductController::class,'produit'])->na
 
 Route::get("/profiles",[ProfileController::class,'profiles'])->name('profile.index');
 
-Route::get('profiles/{profile}',[ProfileController::class,'show'])->where('id','\d+')->name('profiles.show');
+Route::get('profiles/{profile}',[ProfileController::class,'show'])->where('profile','\d+')->name('profiles.show');
 
 Route::get('profiles/create',[ProfileController::class,'create'])->name('create');
 

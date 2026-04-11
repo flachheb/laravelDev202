@@ -9,14 +9,30 @@
 </head>
 <body>
     <x-master title="Profiles - MegaShop">
+        @if($errors->any())
+            <x-alert type='danger'>
+                <h6>Errors</h6>
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </x-alert>
+        @endif
         <h1>Ajouter Profile</h1>
         <form action={{route('store')}} method="POST">
             @csrf
             <label style="color: aliceblue">Name :
             <input name="name" class="form-control" type="text">
+            @error('name')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
             </label><br>
             <label style="color: aliceblue">Email :
             <input name="email" type="email">
+            @error('email')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
             </label><br>
             <label style="color: aliceblue">Password :
             <input name="password" type="password">

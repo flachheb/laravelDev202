@@ -16,7 +16,7 @@ class ProfileController extends Controller
         // if($profile===NULL){
         //     return abort(403);
         // }
-        
+
         return view('profile.show',compact('profile'));
        }
     public function create(){
@@ -24,6 +24,10 @@ class ProfileController extends Controller
     }
     public function store(Request $request){
         //Validation
+        $request->validate([
+            'name'=>'required|beetwen:5,20',
+            'email'=>'required|email|unique:profiles',
+        ]);
         //Insertion
         Profile::create([
             'name'=>$request->name,
