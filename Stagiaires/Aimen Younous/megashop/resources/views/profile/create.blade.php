@@ -5,30 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  
 </head>
 <body>
     <x-master title="Profiles - MegaShop">
         <h1>Ajouter Profile</h1>
-        <form action="#">
-            <label>Name :
-            <input type="text">
+        <form action={{route('store')}} method="POST">
+            @csrf
+            <label style="color: aliceblue">Name :
+            <input name="name" class="form-control" type="text">
             </label><br>
-            <label>Email :
-            <input type="email">
+            <label style="color: aliceblue">Email :
+            <input name="email" type="email">
             </label><br>
-            <label>Password :
-            <input type="password">
+            <label style="color: aliceblue">Password :
+            <input name="password" type="password">
             </label><br>
-            <label>Password :
-            <input type="password">
+            
+            <label style="color: aliceblue">Bio :
+                <textarea name="bio" id="" cols="30" rows="2"></textarea>
             </label><br>
-            <label>Bio :
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+            <label style="color: aliceblue">Image :
+            <input name="image" type="file">
             </label><br>
-            <label>Image :
-            <input type="file">
-            </label><br>
-            <button>Create</button>
+            <button class="btn" type="submit">Create</button>
         </form>
     </x-master>
 </body>

@@ -8,6 +8,7 @@
 </head>
 <body>
     <x-master title="Profiles - MegaShop">
+        @include('partials.flashbag')
         <a href={{route('create')}} class="btn">Create Profile</a>
         <div class="row my-5">
             @foreach($profiles as $profile)

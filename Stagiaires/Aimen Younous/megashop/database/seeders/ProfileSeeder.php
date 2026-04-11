@@ -34,7 +34,7 @@ class ProfileSeeder extends Seeder
 
             ]
         ]);
-        Profile::factory(200)->create();
+        Profile::factory(10)->create();
 
         Profile::create([
             'name'=>'profile3',

@@ -25,3 +25,4 @@ Route::get('profiles/{id}',[ProfileController::class,'show'])->where('id','\d+')
 
 Route::get('profiles/create',[ProfileController::class,'create'])->name('create');
 
+Route::post('profiles/store',[ProfileController::class,'store'])->name('store');
