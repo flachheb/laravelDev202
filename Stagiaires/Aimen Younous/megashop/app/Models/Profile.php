@@ -9,4 +9,8 @@ class Profile extends Model
 {
     protected $fillable = ['name','email','password','bio','image'];
     use HasFactory;
+
+    public function getRouteKeyName(){
+        return 'id';
+    }
 }
