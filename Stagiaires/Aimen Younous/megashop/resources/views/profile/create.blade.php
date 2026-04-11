@@ -36,6 +36,15 @@
             </label><br>
             <label style="color: aliceblue">Password :
             <input name="password" type="password">
+            @error('password')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+            </label><br>
+            <label style="color: aliceblue">validation de Password :
+            <input name="password_confirmation" type="password">
+            @error('password_confirmation')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
             </label><br>
             
             <label style="color: aliceblue">Bio :

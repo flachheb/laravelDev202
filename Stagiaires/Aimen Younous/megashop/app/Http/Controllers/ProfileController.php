@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -24,18 +25,16 @@ class ProfileController extends Controller
     }
     public function store(Request $request){
         //Validation
-        $request->validate([
-            'name'=>'required|beetwen:5,20',
+        $formFields = $request->validate([
+            'name'=>'required|between:5,20',
             'email'=>'required|email|unique:profiles',
+            'password'=>'required|min:6|max:10|confirmed'
         ]);
+
+        $formFields["password"] = Hash::make($request->password) ;
+        // dd($formFields);
         //Insertion
-        Profile::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'password'=>$request->password,
-            'bio'=>$request->bio,
-            'image'=>$request->image,
-        ]);
+        Profile::create($formFields);
         return redirect()->route('profile.index')->with("success","profile $request->name ajouter succeesfully");
     }
 }
