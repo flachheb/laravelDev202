@@ -40,5 +40,5 @@ Route::delete('profiles/{profile}',[ProfileController::class,'destroy'])
 Route::get('profiles/{profile}/edit',[ProfileController::class,'edit'])
 ->name('profiles.edit');
 
-Route::post('profiles/{profile}',[ProfileController::class,'update'])
+Route::put('profiles/{profile}',[ProfileController::class,'update'])
 ->name('profiles.update');

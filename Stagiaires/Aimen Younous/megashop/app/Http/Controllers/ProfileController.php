@@ -25,7 +25,6 @@ class ProfileController extends Controller
         return view('profile.create');
     }
     public function store(ProfileRequest $request){
-        
         //Validation
         $formFields = $request->validated();
 
@@ -44,4 +43,24 @@ class ProfileController extends Controller
     public function edit(Profile $profile){
         return view('profile.edit',compact('profile'));
     }
+
+    public function update(Request $request,Profile $profile){
+        $request->validate([
+            'name' => 'required|between:5,20',
+            'email' => 'required|email',
+            'password_old' => 'nullable|required_with:password_new',
+            'password_new' => 'nullable|min:6|confirmed',
+        ]);
+        $profile->name = $request->name;
+        $profile->bio = $request->bio;
+        if($request->filled('password_new')){
+            if(!Hash::check($request->password_old,$profile->password)){
+                return back()->withErrors("password_old","Ancien Mots de passe incorrect");
+            }
+            $profile->password = Hash::make($request->password_new);
+        }
+        $profile->save();
+        return to_route('profile.index')->with('success','Profile Modifier avec success');
+    }
+
 }

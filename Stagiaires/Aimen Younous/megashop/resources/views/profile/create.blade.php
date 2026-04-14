@@ -34,7 +34,7 @@
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
-            <label style="color: aliceblue">Password :
+            <label>Password :
             <input  name="password" type="password">
             @error('password')
                 <p class="text-danger">{{$message}}</p>

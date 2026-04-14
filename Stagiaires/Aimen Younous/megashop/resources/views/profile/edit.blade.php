@@ -19,41 +19,48 @@
                 </ul>
             </x-alert>
         @endif
-        <h1>Ajouter Profile</h1>
-        <form action={{route('store')}} method="POST">
+        <h1>Modifier Profile</h1>
+        <form action={{route('profiles.update',$profile->id)}} method="POST">
+            @method('PUT')
             @csrf
             <label >Name :
-            <input name="name" class="form-control" value="{{old('name')}}" type="text">
+            <input name="name" class="form-control" value="{{old('name',$profile->name)}}" type="text">
             @error('name')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
             <label >Email :
-            <input value="{{old('email')}}" name="email" type="email">
+            <input readonly class="bg-light" value="{{old('email',$profile->email)}}" name="email" type="email">
             @error('email')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
-            <label style="color: aliceblue">Password :
-            <input  name="password" type="password">
-            @error('password')
+            <label >Old Password :
+            <input  name="password_old" type="password"> 
+            @error('password_old')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
-            <label >validation de Password :
-            <input  name="password_confirmation" type="password">
+            <label >New Password :
+            <input  name="password_new" type="password"> 
+
+            </label><br> 
+            @error('password_new')
+                <p class="text-danger">{{$message}}</p>
+            @enderror
+            <label >Confirmation Password : 
+            <input  name="password_new_confirmation" type="password">
             @error('password_confirmation')
                 <p class="text-danger">{{$message}}</p>
             @enderror
-            </label><br>
             
             <label >Bio :
-                <textarea name="bio" id="" cols="30" rows="2">{{old('bio')}}</textarea>
+                <textarea name="bio" id="" cols="30" rows="2">{{old('bio',$profile->bio)}}</textarea>
             </label><br>
             <label >Image :
-            <input  name="image" type="file">
+            <input  name="image" value="{{old('image',$profile->image)}}" type="file">
             </label><br>
-            <button class="btn" type="submit">Create</button>
+            <button class="btn" type="submit">Modifier</button>
         </form>
     </x-master>
 </body>
