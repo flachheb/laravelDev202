@@ -35,4 +35,13 @@ class ProfileController extends Controller
         Profile::create($formFields);
         return redirect()->route('profile.index')->with("success","profile $request->name ajouter succeesfully");
     }
+
+    public function destroy(Profile $profile){
+        $profile->delete();
+        return to_route('profile.index')->with('success',"Profile $profile->name est Supprimer ");
+    }
+
+    public function edit(Profile $profile){
+        return view('profile.edit',compact('profile'));
+    }
 }

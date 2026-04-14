@@ -16,6 +16,8 @@ Route::get("/login",[LoginControler::class,'show'])->name('login.show');
 
 Route::post("/login",[LoginControler::class,'login'])->name('login');
 
+Route::get("/logout",[LoginControler::class,'logout'])->name('login.logout');
+
 Route::get("/contact",[ShopController::class,'contact'])->name('contact');
 
 Route::get("/cgv",[ShopController::class,'cgv'] )->name('cgv');
@@ -31,3 +33,12 @@ Route::get('profiles/{profile}',[ProfileController::class,'show'])->where('profi
 Route::get('profiles/create',[ProfileController::class,'create'])->name('create');
 
 Route::post('profiles/store',[ProfileController::class,'store'])->name('store');
+
+Route::delete('profiles/{profile}',[ProfileController::class,'destroy'])
+->name('profiles.destroy');
+
+Route::get('profiles/{profile}/edit',[ProfileController::class,'edit'])
+->name('profiles.edit');
+
+Route::post('profiles/{profile}',[ProfileController::class,'update'])
+->name('profiles.update');
