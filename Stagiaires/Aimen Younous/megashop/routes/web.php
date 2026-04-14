@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginControler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ProductController;
@@ -10,6 +11,10 @@ use App\Http\Controllers\ProfileController;
 // });
 
 Route::get("/", [ShopController::class,'accueil'])->name('accueil');
+
+Route::get("/login",[LoginControler::class,'show'])->name('login.show');
+
+Route::post("/login",[LoginControler::class,'login'])->name('login');
 
 Route::get("/contact",[ShopController::class,'contact'])->name('contact');
 

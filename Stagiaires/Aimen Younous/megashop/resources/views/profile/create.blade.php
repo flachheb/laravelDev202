@@ -22,36 +22,36 @@
         <h1>Ajouter Profile</h1>
         <form action={{route('store')}} method="POST">
             @csrf
-            <label style="color: aliceblue">Name :
-            <input name="name" class="form-control" type="text">
+            <label >Name :
+            <input name="name" class="form-control" value="{{old('name')}}" type="text">
             @error('name')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
-            <label style="color: aliceblue">Email :
-            <input name="email" type="email">
+            <label >Email :
+            <input value="{{old('email')}}" name="email" type="email">
             @error('email')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
             <label style="color: aliceblue">Password :
-            <input name="password" type="password">
+            <input  name="password" type="password">
             @error('password')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
-            <label style="color: aliceblue">validation de Password :
-            <input name="password_confirmation" type="password">
+            <label >validation de Password :
+            <input  name="password_confirmation" type="password">
             @error('password_confirmation')
                 <p class="text-danger">{{$message}}</p>
             @enderror
             </label><br>
             
-            <label style="color: aliceblue">Bio :
-                <textarea name="bio" id="" cols="30" rows="2"></textarea>
+            <label >Bio :
+                <textarea name="bio" id="" cols="30" rows="2">{{old('bio')}}</textarea>
             </label><br>
-            <label style="color: aliceblue">Image :
-            <input name="image" type="file">
+            <label >Image :
+            <input  name="image" type="file">
             </label><br>
             <button class="btn" type="submit">Create</button>
         </form>

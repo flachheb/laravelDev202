@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
 <body>
     <x-master title="accueil">
+        @include('partials.flashbag')
         <div class="hero">
             <h1>Bienvenue chez MegaShop</h1>
             <p>Découvrez notre sélection complète d'électronique et d'électroménager</p>

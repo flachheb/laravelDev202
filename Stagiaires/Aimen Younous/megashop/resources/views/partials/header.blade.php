@@ -4,6 +4,7 @@
             <nav>
                 <ul>
                     <li><a href={{route('accueil')}}>Accueil</a></li>
+                    <li><a href={{route('login.show')}}>Login</a></li>
                     <li><a href={{route('profile.index')}}>Profiles</a></li>
                     <li><a href={{route('categories','informatique')}}>Informatique</a></li>
                     <li><a href={{route('categories',"petit-electromenager")}}>Petit Électroménager</a></li>
