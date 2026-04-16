@@ -11,17 +11,21 @@ use App\Http\Controllers\PublicationsController;
 //     return view('layouts.master');
 // });
 
-Route::get("/", [ShopController::class,'accueil'])->name('accueil');
+Route::get("/", [ShopController::class,'accueil'])->name('accueil')->middleware('auth');
 
-Route::get("/login",[LoginControler::class,'show'])->name('login.show');
+Route::middleware('guest')->group(function(){
+    Route::get("/login",[LoginControler::class,'show'])->name('login.show');
+
+});
+
+Route::get("/contact",[ShopController::class,'contact'])->name('contact');
+
+Route::get("/cgv",[ShopController::class,'cgv'] )->name('cgv');
 
 Route::post("/login",[LoginControler::class,'login'])->name('login');
 
 Route::get("/logout",[LoginControler::class,'logout'])->name('login.logout');
 
-Route::get("/contact",[ShopController::class,'contact'])->name('contact');
-
-Route::get("/cgv",[ShopController::class,'cgv'] )->name('cgv');
 
 Route::get("/categories/{cat}",[ProductController::class,'categories'])->name('categories');
 
