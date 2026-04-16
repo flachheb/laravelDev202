@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
-    public function profiles(){
+    public function index(){
         $profiles = Profile::paginate(12);
         return view('profile.index',compact('profiles'));
     }
