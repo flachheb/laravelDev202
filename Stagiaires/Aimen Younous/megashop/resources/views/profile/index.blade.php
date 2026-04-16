@@ -8,7 +8,7 @@
 </head>
 <body>
     <x-master title="Profiles - MegaShop">
-        <a href={{route('create')}} class="btn">Create Profile</a>
+        <a href={{route('profiles.create')}} class="btn">Create Profile</a>
         <div class="row my-5">
             @foreach($profiles as $profile)
                <x-profile-card :profile="$profile"/>

@@ -27,17 +27,21 @@ class ProfileController extends Controller
     public function store(ProfileRequest $request){
         //Validation
         $formFields = $request->validated();
-
+        //storinf image
+        if($request->hasFile('image')){
+            $formFields["image"] = $request->file('image')->store('profiles','public') ;
+        }
+        //Hash password
         $formFields["password"] = Hash::make($request->password) ;
         // dd($formFields);
         //Insertion
         Profile::create($formFields);
-        return redirect()->route('profile.index')->with("success","profile $request->name ajouter succeesfully");
+        return redirect()->route('profiles.index')->with("success","profile $request->name ajouter succeesfully");
     }
 
     public function destroy(Profile $profile){
         $profile->delete();
-        return to_route('profile.index')->with('success',"Profile $profile->name est Supprimer ");
+        return to_route('profiles.index')->with('success',"Profile $profile->name est Supprimer ");
     }
 
     public function edit(Profile $profile){
@@ -50,17 +54,23 @@ class ProfileController extends Controller
             'email' => 'required|email',
             'password_old' => 'nullable|required_with:password_new',
             'password_new' => 'nullable|min:6|confirmed',
+            'image'=>'nullable|image|mimes:png,jpg,jpeg,svg'
         ]);
         $profile->name = $request->name;
         $profile->bio = $request->bio;
         if($request->filled('password_new')){
             if(!Hash::check($request->password_old,$profile->password)){
-                return back()->withErrors("password_old","Ancien Mots de passe incorrect");
+                return back()->withErrors([
+                    'password_old' => 'Ancien mot de passe incorrect'
+                ]);
             }
             $profile->password = Hash::make($request->password_new);
         }
+        if($request->hasFile('image')){
+            $profile->image = $request->file('image')->store('profiles','public') ;
+        }
         $profile->save();
-        return to_route('profile.index')->with('success','Profile Modifier avec success');
+        return to_route('profiles.index')->with('success','Profile Modifier avec success');
     }
 
 }

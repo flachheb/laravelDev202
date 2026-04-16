@@ -7,7 +7,7 @@
                     @guest
                     <li><a href={{route('login.show')}}>Login</a></li>
                     @endguest
-                    <li><a href={{route('profile.index')}}>Profiles</a></li>
+                    <li><a href={{route('profiles.index')}}>Profiles</a></li>
                     <li><a href={{route('categories','informatique')}}>Informatique</a></li>
                     <li><a href={{route('categories',"petit-electromenager")}}>Petit Électroménager</a></li>
                     <li><a href={{route('categories',"grand-electromenager")}}>Grand Électroménager</a></li>

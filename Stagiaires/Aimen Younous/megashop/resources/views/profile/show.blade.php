@@ -9,17 +9,17 @@
 <body>
     <x-master title="Show Profile - MegaShop">
         <div class=" card m-1">
-            <div class="card-img">
-                <img src={{$profile->image}} alt="">
+            <div class="card-img" style="width: 40%">
+                <img class="card-img w-20"  src="{{asset('storage/'.$profile->image)}}" alt="">
             </div>
             <div class="card-body">
                 <p class="card-text">id : {{$profile->id}}</p>
                 <h1 class="card-title">name : {{$profile->name}}</h1>
                 <h4 class="card-text">email : {{$profile->email}}</h4>
-                <h3 class="card-text">{{$profile->bio}}</h3>
+                <h3 class="card-text">Bio : <br>{{$profile->bio}}</h3>
             </div>
         </div> 
-        <a class="btn stretched-link" href={{route('profile.index')}}>Retour</a>
+        <a class="btn stretched-link" href={{route('profiles.index')}}>Retour</a>
     </x-master>
 </body>
 </html>

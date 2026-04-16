@@ -20,7 +20,7 @@
             </x-alert>
         @endif
         <h1>Ajouter Profile</h1>
-        <form action={{route('store')}} method="POST">
+        <form action={{route('profiles.store')}} method="POST" enctype="multipart/form-data">
             @csrf
             <label >Name :
             <input name="name" class="form-control" value="{{old('name')}}" type="text">

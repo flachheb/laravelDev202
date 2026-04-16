@@ -20,7 +20,7 @@
             </x-alert>
         @endif
         <h1>Modifier Profile</h1>
-        <form action={{route('profiles.update',$profile->id)}} method="POST">
+        <form enctype="multipart/form-data" action={{route('profiles.update',$profile->id)}} method="POST" >
             @method('PUT')
             @csrf
             <label >Name :
@@ -58,6 +58,9 @@
                 <textarea name="bio" id="" cols="30" rows="2">{{old('bio',$profile->bio)}}</textarea>
             </label><br>
             <label >Image :
+            <div class="card-img" style="width: 10%">
+                <img class=" card-img"  src="{{asset('storage/'.$profile->image)}}" alt="">
+            </div>
             <input  name="image" value="{{old('image',$profile->image)}}" type="file">
             </label><br>
             <button class="btn" type="submit">Modifier</button>
