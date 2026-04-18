@@ -18,6 +18,11 @@
                 <h4 class="card-text">email : {{$profile->email}}</h4>
                 <h3 class="card-text">Bio : <br>{{$profile->bio}}</h3>
             </div>
+            <div class="card-footer">
+                <a href="{{ route('download.image', $profile->id) }}" target="_blank">
+                    Download
+                </a>
+            </div>
         </div> 
         <a class="btn stretched-link" href={{route('profiles.index')}}>Retour</a>
     </x-master>

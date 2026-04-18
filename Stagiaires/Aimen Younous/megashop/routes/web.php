@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\LoginControler;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
@@ -58,3 +59,5 @@ Route::get("/produitDetail/{cat}/{id}",[ProductController::class,'produit'])->na
 Route::resource('profiles',ProfileController::class);
 
 Route::resource('publications',PublicationsController::class);
+
+Route::get('/download/{profile}',[FileController::class,'download'])->name('download.image');
