@@ -6,9 +6,11 @@ use App\Models\Publication;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PublicationsRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PublicationsController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      */
@@ -35,6 +37,7 @@ class PublicationsController extends Controller
         if($request->hasFile('image')){
             $formFields['image'] = $request->file('image')->store('publications','public');
         };
+        $formFields['profile_id']=Auth::id();
         Publication::create($formFields);
 
         return to_route('publications.index')->with("success","Publications ajouter succeesfully");
@@ -71,6 +74,7 @@ class PublicationsController extends Controller
         if($request->hasFile('image')){
             $publication->image = $request->file('image')->store('publications','public') ;
         }
+        $publication->profile_id = Auth::id();
         $publication->save();
         return to_route('publications.index')->with('success','Publication Modifier avec success');
 

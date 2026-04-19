@@ -27,6 +27,7 @@
                             <li><a class="dropdown-item" href="#">Action ...</a></li>
                         </ul>
                     </li>
+                    @endauth
                     <li class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" 
                             type="button" 
@@ -37,11 +38,13 @@
                         </button>
 
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{route('publications.index')}}">publications</a></li>
+                            @auth
                             <li><a class="dropdown-item" href="{{route('publications.create')}}">create</a></li>
-                            <li><a class="dropdown-item" href="#">Action ...</a></li>
+                            @endauth
                         </ul>
                     </li>
-                    @endauth
+                    
                 </ul>
             </nav>
         </div>

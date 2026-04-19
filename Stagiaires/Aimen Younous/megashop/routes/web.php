@@ -58,6 +58,16 @@ Route::get("/produitDetail/{cat}/{id}",[ProductController::class,'produit'])->na
 //ultra
 Route::resource('profiles',ProfileController::class);
 
-Route::resource('publications',PublicationsController::class);
+// public route
+Route::get('/publications', [PublicationsController::class, 'index'])
+    ->name('publications.index');
+
+// protected routes
+Route::middleware('auth')->group(function () {
+    Route::resource('publications', PublicationsController::class)
+        ->except(['index']);
+});
+
+// Route::resource('publications',PublicationsController::class)->middleware('auth')->except(['index']);
 
 Route::get('/download/{profile}',[FileController::class,'download'])->name('download.image');
