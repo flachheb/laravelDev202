@@ -9,4 +9,9 @@ class Publication extends Model
 {
     use SoftDeletes;
     protected $fillable = ['titre','body','image','profile_id'];
+
+    public function profile(){
+        return $this->belongsTo(Profile::class);//hadi mafahemhach
+    }
 }
+

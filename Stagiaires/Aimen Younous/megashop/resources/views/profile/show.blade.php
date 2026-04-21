@@ -9,6 +9,7 @@
 <body>
     <x-master title="Show Profile - MegaShop">
         <div class=" card m-1">
+            <div class="card-title">Profile</div>
             <div class="card-img" style="width: 40%">
                 <img class="card-img w-20"  src="{{asset('storage/'.$profile->image)}}" alt="">
             </div>
@@ -24,6 +25,17 @@
                 </a>
             </div>
         </div> 
+        <div class="row">
+            
+            Publications :
+            @if(is_null($profile->publications))
+                <p>accun publication</p>
+            @else
+            @foreach($profile->publications as $publication)
+                <x-publications :canUpdate="auth()->check() && auth()->user()->id===$publication->profile_id" :publication="$publication"/>
+            @endforeach
+            @endif
+        </div>
         <a class="btn stretched-link" href={{route('profiles.index')}}>Retour</a>
     </x-master>
 </body>

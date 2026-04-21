@@ -19,4 +19,8 @@ class Profile extends Model
     public function getImageAttribute($value){
         return $value ?? "profiles/profile.png";
     }
+
+    public function publications(){
+        return $this->hasMany(Publication::class);
+    }
 }
